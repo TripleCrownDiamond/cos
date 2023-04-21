@@ -27,7 +27,7 @@ class FormulasList extends Component
         'newFormula.name.unique' => 'Cette formule existe déjà',
         'newFormula.regular_price.required' => 'Entrez le prix normal de la formule',
         'newFormula.regular_price.numeric' => 'Le format du prix est invalide',
-        'newFormula.promo_price.numeric' => 'Le format du prix est invalide',
+       
     ];
 
     public function render()
@@ -76,14 +76,14 @@ class FormulasList extends Component
             return [
                 'editFormula.name' => ['required', ValidationRule::unique("formulas", "name")->ignore($this->editFormula['id']) ] ,
                 'editFormula.regular_price' => ['required', 'numeric'],
-                'editFormula.promo_price' => ['numeric'],
+               
             ];
         }
 
         return [
             'newFormula.name' => 'required|unique:formulas,name',
             'newFormula.regular_price' => 'required|numeric',
-            'newFormula.promo_price' => 'numeric',
+          
         ];
     }
 
@@ -97,13 +97,6 @@ class FormulasList extends Component
     public function updateFormula(){
         // Vérifier que les informations envoyées par le formulaire sont correctes
         $validationAttributes = $this->validate();
-
-         if($validationAttributes["editFormula"]["promo_price"] === NULL) {
-             $validationAttributes["editFormula"]["promo_price"] = 0.00;
-         }
-
-        // dd($validationAttributes["editFormula"]["promo_price"]);
-        // exit;
         
         Formula::find($this->editFormula["id"])->update($validationAttributes["editFormula"]);
 

@@ -30,7 +30,7 @@
 
                         <div class="form-group col-12">
                             <label for="telephone">Téléphone<span class="text-danger" >*</span></label>
-                            <input placeholder="Ex:97000000" type="text" class="form-control ellipsis @error('newUser.telephone') is-invalid @enderror" wire:model="newUser.telephone" autofocus="" name="tel1" value = "{{ old('tel1')}}" maxlength="8">
+                            <input placeholder="Ex:97000000" type="tel" class="form-control ellipsis @error('newUser.telephone') is-invalid @enderror" wire:model="newUser.telephone" autofocus="" name="tel1" value = "{{ old('tel1')}}" maxlength="8">
                             @error('newUser.telephone')
                                 <span class="invalid-feedback text—danger">
                                     <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group col-12">
                             <label for="whatsapp">WhatsApp</label>
-                            <input placeholder="Avec l'indicatif(22997000000)" type="text" class="form-control ellipsis @error('newUser.whatsapp') is-invalid @enderror" wire:model="newUser.whatsapp" autofocus="" name="tel2" value = "{{ old('tel2')}}" maxlength="11">
+                            <input placeholder="Avec l'indicatif(22997000000)" type="tel" class="form-control ellipsis @error('newUser.whatsapp') is-invalid @enderror" wire:model="newUser.whatsapp" autofocus="" name="tel2" value = "{{ old('tel2')}}" maxlength="11">
                         </div>
                         @error('newUser.whatsapp')
                             <span class="invalid-feedback text—danger">
@@ -84,7 +84,7 @@
                                 <div class="spinner-border spinner-border-sm text-light text-center" role="status">
                                     <span class="sr-only">Loading...</span>
                                 </div>
-                                <span> Ajout de partenaire en cours </span>
+                               
                             </span>
                         </button><br>
                     </div>
@@ -97,7 +97,7 @@
                         <div class="spinner-border spinner-border-sm text-light text-center" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
-                        <span> Retour en cours </span>
+                        
                     </span>
                 </button>
             </div>

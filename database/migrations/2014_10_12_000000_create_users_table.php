@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('telephone')->unique();
             $table->string('whatsapp')->nullable();
             $table->string('email')->unique();
-            $table->float('balance')->default(0);
-            $table->float('earnings')->default(0);
+            $table->float('balance', 12, 2)->default(0);
+            $table->float('earnings' , 12, 2)->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_active')->default(true);

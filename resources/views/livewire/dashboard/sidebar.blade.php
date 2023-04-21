@@ -4,7 +4,7 @@
           <div class="sidebar-brand">
             <a href=""> 
               <img alt="image" src="{{ asset('./plus.png') }}" class="header-logo" /> <span
-                class="logo-name">CANAL+ OS</span>
+                class="logo-name">COS</span>
             </a>
           </div>
           <ul class="sidebar-menu">
@@ -55,21 +55,32 @@
                 <a href=" {{ route('auth.formulas.formulas.index') }} " class="nav-link"><i data-feather="tv"></i><span>Formules</span></a>
               </li>
             @endcan
-            
-            <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="users"></i><span>Clients</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html"><i class="
-                  fas fa-user-plus"></i>Ajouter</a></li>
-                <li><a class="nav-link" href="widget-data.html"><i class="
-                  fas fa-users-cog"></i>Gérer</a></li>
-              </ul>
-            </li>
 
+            <li class="dropdown {{ setMenuClass ('customers', 'active') }}">
+              <a href=" {{ route('auth.customers.customers.index') }} " class="nav-link"><i data-feather="users"></i><span>Clients</span></a>
+            </li>
+            
+            <li class="dropdown {{ setMenuClass ('operations', 'active') }}">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="activity"></i><span>Activités</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('auth.renews.renews.index') }}"><i
+                  data-feather="refresh-ccw"></i>Renouvellements</a></li>
+                <li>
+                  <a href="#" class="nav-link"><i
+                    data-feather="plus"></i><span>Compléments</span></a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link"><i
+                    data-feather="shopping-cart"></i><span>Recrutements</span></a>
+                </li>
+                
+              </ul>
+            </li>
+    
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="refresh-ccw"></i><span>Renouvellements</span></a>
+                  data-feather="shopping-cart"></i><span>Boutique</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="widget-chart.html"><i class="
                   fas fa-plus-circle"></i>Ajouter</a></li>
@@ -77,46 +88,16 @@
                   fas fa-cog"></i>Gérer</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="plus"></i><span>Compléments</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html"><i class="
-                  fas fa-plus-circle"></i>Ajouter</a></li>
-                <li><a class="nav-link" href="widget-data.html"><i class="
-                  fas fa-cog"></i>Gérer</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="shopping-cart"></i><span>Recrutements</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html"><i class="
-                  fas fa-plus-circle"></i>Ajouter</a></li>
-                <li><a class="nav-link" href="widget-data.html"><i class="
-                  fas fa-cog"></i>Gérer</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="hard-drive"></i><span>Décodeurs</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html"><i class="
-                  fas fa-plus-circle"></i>Ajouter</a></li>
-                <li><a class="nav-link" href="widget-data.html"><i class="
-                  fas fa-cog"></i>Gérer</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
+            <li class="dropdown {{ setMenuClass ('operations', 'active') }}">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="dollar-sign"></i><span>Finances</span></a>
               <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('auth.finances.finances.index') }}" ><i class="
+                  fas fa-piggy-bank"></i>Opérations</a></li>
                 <li><a class="nav-link" href="widget-chart.html"><i class="
-                  fas fa-plus-circle"></i>Créditer</a></li>
-                <li><a class="nav-link" href="widget-chart.html"><i class="
-                    fas fa-minus-circle"></i>Débiter</a></li>
-                <li><a class="nav-link" href="widget-data.html"><i class="
                   fas fa-gift"></i>Bonus</a></li>
+                <li><a class="nav-link" href="{{ route('auth.finances.finances.history') }}"><i class="
+                  fas fa-clock"></i>Historique</a></li>
               </ul>
             </li>
             

@@ -15,7 +15,7 @@
                   <thead>
                     <tr>
                       <th>Nom</th>
-                      <th>Prix Normal</th>
+                      <th>Prix </th>
                       
                       <th>Action</th>
                     </tr>

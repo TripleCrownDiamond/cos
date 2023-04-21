@@ -44,7 +44,7 @@ class Register extends Component
         'user.password.required' => 'Numéro WhatsApp invalide',
         'user.password.confirmed' => 'Les deux mot de passe ne correspondent pas',
         'user.password.regex' => 'Le mot de passe doit contenir des lettre et des chiffres',
-        'user.password.min' => 'Le mot de passe doit contenir dau moins 6 caractères',
+        'user.password.min' => 'Le mot de passe doit contenir au moins 6 caractères',
     ];
 
     public function render()
@@ -76,6 +76,7 @@ class Register extends Component
         $user['user']['password'] = Hash::make($user['user']['password']);
 
         if($agency && $user) {
+            
             $newAgency = Agency::create($agency['agency']);
             $agency_id = $newAgency->id;
             $user['user']['agency_id'] = $agency_id;

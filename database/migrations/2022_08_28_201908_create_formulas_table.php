@@ -16,7 +16,7 @@ class CreateFormulasTable extends Migration
         Schema::create('formulas', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->float("regular_price");
+            $table->float("regular_price", 12, 2);
             $table->foreignId("agency_id")->constrained('agencies')->onDelete('restrict')->onUpdate('restrict');
             $table->softDeletes();
             $table->timestamps();

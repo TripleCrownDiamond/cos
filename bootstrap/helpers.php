@@ -4,11 +4,18 @@ use Illuminate\Support\Str;
 define("PAGELIST", "liste");
 define("PAGECREATEFORM", "create");
 define("PAGEEDITFORM", "edit");
+define("OPERATIONS", "operations");
+define("CREDIT", "credit");
+define("DEBIT", "debit");
 
 define("DEFAULTPASSOWRD", "password");
 
 function userFullName() {
     return auth()->user()->first_name . " " . auth()->user()->last_name ;
+}
+
+function userBalance() {
+    return auth()->user()->balance;
 }
 
 function getAgency() {

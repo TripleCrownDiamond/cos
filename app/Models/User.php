@@ -68,4 +68,10 @@ class User extends Authenticatable
         return $this->roles()->where("role_name", $role)->first() !== null;
     }
 
+    public function renew () {
+        return $this->hasMany(Renew::class);
+    }
+
+    
+
 }

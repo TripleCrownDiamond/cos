@@ -19,7 +19,7 @@
                             @enderror
                         </div>
                         <div class="form-group col-12">
-                            <label for="regular_price">Prix Normal<span class="text-danger" >*</span></label>
+                            <label for="regular_price">Prix<span class="text-danger" >*</span></label>
                             <input placeholder="" type="number" class="form-control @error('editFormula.regular_price') is-invalid @enderror" wire:model="editFormula.regular_price" autofocus="" name="" value = "{{ old('regular_price')}}">
                             @error('editFormula.regular_price')
                                 <span class="invalid-feedback text—danger">

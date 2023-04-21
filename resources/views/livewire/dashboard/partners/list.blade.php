@@ -12,12 +12,14 @@
           <a href="" wire:click.prevent="goToAddUser()" class="btn btn-dark btn-compose mb-3"><i class="
               fas fa-user-plus"></i> Nouveau Partenaire</a>
           </div>
+          
           <div class="card">
             <div class="card-header">
               <h4>Gérer les partenaires</h4>
+             
             </div>
             <div class="card-body">
-              <div class="table-responsive">
+              {{-- <div class="table-responsive">
 
                 <table class="table table-striped table-hover" id="save-stage" style="width:100%;">
                   <thead>
@@ -53,7 +55,7 @@
                     
                   </tbody>
                 </table>
-              </div>
+              </div> --}}
             </div>
             <div class="card-footer">
                 

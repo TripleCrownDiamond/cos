@@ -18,20 +18,10 @@
                                 </span>
                             @enderror
                         </div>
-                        <div class="form-group col-6">
-                            <label for="regular_price">Prix Normal<span class="text-danger" >*</span></label>
+                        <div class="form-group col-12">
+                            <label for="regular_price">Prix <span class="text-danger" >*</span></label>
                             <input placeholder="" type="number" class="form-control @error('newFormula.regular_price') is-invalid @enderror" wire:model="newFormula.regular_price" autofocus="" name="" value = "{{ old('lastName')}}">
                             @error('newFormula.regular_price')
-                                <span class="invalid-feedback text—danger">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group col-6">
-                            <label for="promo_price">Prix Promo</label>
-                            <input placeholder="" type="number" class="form-control @error('newFormula.promo_price') is-invalid @enderror" wire:model="newFormula.promo_price" autofocus="" name="" value = "{{ old('lastName')}}">
-                            @error('newFormula.promo_price')
                                 <span class="invalid-feedback text—danger">
                                     <strong>{{ $message }}</strong>
                                 </span>

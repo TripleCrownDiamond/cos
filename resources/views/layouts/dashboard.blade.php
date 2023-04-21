@@ -25,8 +25,6 @@
       <!-- Main Content -->
       <div class="main-content">
 
-       
-
         @yield('content')
 
         {{-- @include('dashboard.components.settings') --}}
@@ -34,8 +32,13 @@
       @include('dashboard.components.footer')
     </div>
   </div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+  </script>
   @livewireScripts
-  @include('globals.notifications')
+  
   @include('globals.scripts')
   <script src="{{ asset('assets/bundles/sweetalert/sweetalert.min.js') }}"></script>
   

@@ -26,14 +26,6 @@ Route::get('/dashboard', function () {
     return view('dashboard.overview');
 })->name('dashboard')->middleware('auth');
 
-// Route::get('/addpartner', function () {
-//     return view('dashboard.partners.addpartner');
-// })->name('addpartner')->middleware('auth');
-
-// Route::get('/partners', function () {
-//     return view('dashboard.partners.managepartners');
-// })->name('partners')->middleware('auth');
-
 Route::group([
     "middleware" => ["auth"],
     'as' => 'auth.'
@@ -55,14 +47,43 @@ Route::group([
         'as' => 'formulas.'
     ], function(){
 
-        Route::get("/formulas", App\Http\Livewire\Dashboard\Formulas\FormulasList::class)->name("formulas.index");
+        Route::get("/manage", App\Http\Livewire\Dashboard\Formulas\FormulasList::class)->name("formulas.index");
         //Route::get("/rolesetpermissions", [UserController::class, "index"])->name("rolespermissions.index");
         //
 
     });
+
+    Route::group([
+        "prefix" => "finances",
+        'as' => 'finances.'
+    ], function(){
+
+        Route::get("/operations", App\Http\Livewire\Dashboard\Finances\Finances::class)->name("finances.index");
+        Route::get("/history", App\Http\Livewire\Dashboard\Finances\History::class)->name("finances.history");
+        
+    });
+
+    Route::group([
+        "prefix" => "customers",
+        'as' => 'customers.'
+    ], function(){
+
+        Route::get("/manage", App\Http\Livewire\Dashboard\Customers\Customers::class)->name("customers.index");
+       
+    });
+
+    Route::group([
+        "prefix" => "renews",
+        'as' => 'renews.'
+    ], function(){
+
+        Route::get("/manage", App\Http\Livewire\Dashboard\Renews\Renews::class)->name("renews.index");
+       
+    });
+
 });
 
-//Route::get("/addpartner", AddPartner::class)->middleware('auth')->name('partners.add');
+//Route::post('logout', [ App\Http\Controllers\ClientController::class, 'logout'])->name('logout');
 
 
     

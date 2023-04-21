@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Models\UserRole;
 use Carbon\Carbon;
 use Illuminate\Contracts\Validation\Rule;
-// use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Permission;
@@ -17,16 +16,13 @@ use Illuminate\Validation\Rule as ValidationRule;
 
 class Partners extends Component
 {
-    //Use pagination
-    use WithPagination;
-
-    //Add Bootstrap to pagination
-    protected $paginationTheme = "bootstrap";
+   
 
     public $currentPage = PAGELIST;
 
     public $newUser = [];
     public $editUser = [];
+    public $search = "";
 
     public $rolePermissions = [];
 
@@ -48,15 +44,27 @@ class Partners extends Component
 
     public function render()
     {
+       
         $partners = User::latest();
+            // ->where('first_name', 'LIKE', $search)
+            // ->orWhere('first_name', 'LIKE', $search)
+            // ->orWhere('telephone', 'LIKE', $search);
         Carbon::setLocale("fr");
 
         return view('livewire.dashboard.partners.index',[
             // "users" => User::latest()->paginate(10)->onEachSide(2)
+            // ->where('first_name', 'LIKE', $search)
+            // ->orWhere('first_name', 'LIKE', $search)
+            // ->orWhere('telephone', 'LIKE', $search)
+            // ->where('agency_id', getAgencyId())->whereHas('roles', function($q){
+            //     $q->where('id', 3);
+            // });
            
-            "users" => $partners->where('agency_id', getAgencyId())->whereHas('roles', function($q){
-                $q->where('id', 3);
-             })->paginate(30),
+            "users" => $partners
+                ->where('agency_id', getAgencyId())->whereHas('roles', function($q){
+                    $q->where('id', 3);
+                })
+                ->paginate(30)->onEachSide(2),
         ])->extends('layouts.dashboard')->section("content");
     }
 

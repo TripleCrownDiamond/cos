@@ -19,4 +19,9 @@ class Formula extends Model
     {
         return $this->belongsTo(Agency::class);
     }
+
+    public function renew()
+    {
+        return $this->belongsToMany(Formula::class);
+    }
 }

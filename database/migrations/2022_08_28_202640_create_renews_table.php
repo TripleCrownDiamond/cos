@@ -15,6 +15,11 @@ class CreateRenewsTable extends Migration
     {
         Schema::create('renews', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('formula_id')->constrained('formulas')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreignId('customer_id')->constrained('customers')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreignId('agency_id')->constrained('agencies')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreignId('user_id')->constrained('users')->onDelete('restrict')->onUpdate('restrict');
+            $table->integer('duration');
             $table->timestamps();
         });
     }

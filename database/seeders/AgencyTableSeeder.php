@@ -17,26 +17,12 @@ class AgencyTableSeeder extends Seeder
         DB::table("agencies")->insert(
             [
                 [
-                    "agency_name" => "L'AFFAIRISTE STORE",
-                    "uniq_id" => uniqid(),
-                ],
-                [
-                    "agency_name" => "SOLUTIONS LUCIOLE",
-                    "uniq_id" => uniqid(),
-                ],
-                [
-                    "agency_name" => "SMART TRADE CORP",
-                    "uniq_id" => uniqid(),
-                ],
-                [
-                    "agency_name" => "SIDI ET FILS",
-                    "uniq_id" => uniqid(),
-                ],
-                [
-                    "agency_name" => "CASTRO NEGOCE INTER",
-                    "uniq_id" => uniqid(),
+                    "agency_name" => "L'affairiste Store",
+                    "agency_email" => "chezlaffairiste@gmail.com",
+                    "agency_telephone" => "66345634",
+                    "uniq_id" => "cos" . uniqid(),
+                    "validated" => 0,
                 ]
-                
             ]
         );
     }

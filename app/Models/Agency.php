@@ -33,4 +33,8 @@ class Agency extends Model
     {
         return $this->hasMany(Formula::class);
     }
+
+    public function renew () {
+        return $this->belongsToMany(Renew::class);
+    }
 }

@@ -38,12 +38,14 @@
                                 </span>
                             @enderror
                     </div>
-                    <div class="form-group">
+
+                    {{-- <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="remember" class="custom-control-input" >
+                            <input type="checkbox" name="remember" class="custom-control-input" wire:model.lazy="form.remember"/>
                             <label class="custom-control-label" for="remember-me">Se souvenir de moi</label>
                         </div>
-                    </div>
+                    </div> --}}
+                    
                     <div class="form-group">
                         <button type="submit" class="btn btn-dark btn-lg btn-block" tabindex="4" wire:loading.attr="disabled" wire:target="submit">
                             <span wire:loading.remove wire:target="submit">
@@ -53,7 +55,7 @@
                                 <div class="spinner-border spinner-border-sm text-light text-center" role="status">
                                     <span class="sr-only">Loading...</span>
                                 </div>
-                                <span> Connexion en cours </span>
+                                
                             </span>
                         </button>
                     </div>
